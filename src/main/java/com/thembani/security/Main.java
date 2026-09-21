@@ -1,17 +1,57 @@
-package com.thembani;
+package com.thembani.security;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import java.util.Scanner;
+
 public class Main {
-    static void main() {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        IO.println(String.format("Hello and welcome!"));
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            IO.println("i = " + i);
-        }
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+        PasswordChecker checker = new PasswordChecker();
+
+        System.out.println("================================");
+        System.out.println("      SECURE PASSWORD CHECKER");
+        System.out.println("================================");
+
+        System.out.print("Enter password: ");
+        String password = scanner.nextLine();
+
+        System.out.println();
+        System.out.println("Password analysis:");
+        System.out.println();
+
+        System.out.println(
+                (checker.hasMinimumLength(password) ? "✓" : "✗")
+                        + " At least 8 characters"
+        );
+
+        System.out.println(
+                (checker.hasUppercase(password) ? "✓" : "✗")
+                        + " Contains uppercase letter"
+        );
+
+        System.out.println(
+                (checker.hasLowercase(password) ? "✓" : "✗")
+                        + " Contains lowercase letter"
+        );
+
+        System.out.println(
+                (checker.hasNumber(password) ? "✓" : "✗")
+                        + " Contains number"
+        );
+
+        System.out.println(
+                (checker.hasSpecialCharacter(password) ? "✓" : "✗")
+                        + " Contains special character"
+        );
+
+        System.out.println();
+        System.out.println("Password score: "
+                + checker.calculateScore(password) + "/5");
+
+        System.out.println("Password strength: "
+                + checker.getStrength(password));
+
+        scanner.close();
     }
 }
