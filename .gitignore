@@ -1,0 +1,52 @@
+# ---------- Maven build output ----------
+target/
+!.mvn/wrapper/maven-wrapper.jar
+dependency-reduced-pom.xml
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+release.properties
+
+# ---------- Compiled files ----------
+*.class
+*.jar
+*.war
+!.mvn/wrapper/maven-wrapper.jar
+
+# ---------- IntelliJ IDEA ----------
+# Ignore the whole folder: it's machine-specific (JDK paths, window layout, etc.)
+.idea/
+out/
+*.iml
+*.iws
+*.ipr
+
+# ---------- Other IDEs ----------
+.vscode/
+.classpath
+.project
+.settings/
+.factorypath
+.apt_generated
+.springBeans
+.sts4-cache
+nbproject/private/
+nbbuild/
+nbdist/
+
+# ---------- Logs and temp files ----------
+*.log
+*.tmp
+*.swp
+*~
+hs_err_pid*
+
+# ---------- Secrets (never commit these) ----------
+.env
+*.pem
+*.key
+
+# ---------- OS files ----------
+.DS_Store
+Thumbs.db
+Desktop.ini
