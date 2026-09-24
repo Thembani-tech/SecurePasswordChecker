@@ -2,6 +2,9 @@
 
 A command-line Java application that checks a password against five common security rules, gives it a score out of 5, and rates it **WEAK**, **MEDIUM** or **STRONG**. Built with Maven and covered by JUnit 5 unit tests.
 
+# verification code
+
+WTC-6LB48KMC
 
 ## Features
 
